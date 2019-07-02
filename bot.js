@@ -55,10 +55,10 @@ function processCommand(recievedMessage) {
   if (!client.commands.has(primaryCommand)) return;
 
 try {
-	client.commands.get(primaryCommand).execute(arguments, recievedMessage);
+	client.commands.get(primaryCommand).execute(client, recievedMessage, arguments);
 } catch (error) {
 	console.error(error);
-	message.reply('there was an error trying to execute that command!');
+	recievedMessage.channel.send('there was an error trying to execute that command!');
 }
 }
 
