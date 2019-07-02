@@ -1,7 +1,7 @@
 module.exports = {
     name: 'clear',
     description: 'Clears the x last messages as long as they arent two weeks old or older.',
-    execute(recievedMessage, arguments) {
+    execute(client, recievedMessage, arguments) {
          if (recievedMessage.member.hasPermissions("ADMINISTRATOR")) {
                 if(arguments.length == 0) {
                       recievedMessage.channel.send("How many, " + recievedMessage.author.toString() + "?")
