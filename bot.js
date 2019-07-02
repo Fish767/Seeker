@@ -20,7 +20,7 @@ client.on('ready', () => {
 
 client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
-    return
+    recievedMessage.delete(600000)
   } else {
   recievedMessage.channel.send("Message recieved, " + recievedMessage.author.toString()+":" + recievedMessage.content)
   }
