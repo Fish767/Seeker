@@ -42,6 +42,8 @@ function processCommand(recievedMessage) {
     helpCommand(arguments, recievedMessage)
   } else if (primaryCommand == "multiply") {
     multiplyCommand(arguments, recievedMessage)
+  } else if (primaryCommand == "clear") {
+    clearCommand(arguments, recievedMessage)
   } else {
     recievedMessage.channel.send("Unknown command.")
   }
@@ -64,6 +66,20 @@ function helpCommand(arguments, recievedMessage) {
     recievedMessage.channel.send("I'm not sure what you need help with. Try `!help [topic]`")
   } else {
     recievedMessage.channel.send("It looks like you need help with "+ arguments)
+  }
+}
+
+function clearCommand(arguments, recievedMessage) {
+  if (recievedMessage.author.hasPremissions(ADMINISTRATOR))
+  {
+    if(arguments.length == 0) {
+      recievedMessage.channel.send("How many, " + recievedMessage.author.tostring() + "?")
+    } else {
+      recievedMessage.channel.deleteBulk(arguments)
+      recievedMessage.channel.send("Deleted "+arguments+" messages.")
+    }
+  }else {
+    recievedMessage.channel.send("Oof. You need more permissions " + recievedMessage.author.toString()+".")
   }
 }
 
