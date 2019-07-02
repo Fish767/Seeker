@@ -29,8 +29,6 @@ client.on('message', (recievedMessage) => {
 
   if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
-  }else {
-  recievedMessage.channel.send("Available Commands are !help and !multiply")
   }
 })
 
