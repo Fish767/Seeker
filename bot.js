@@ -20,7 +20,7 @@ client.on('ready', () => {
 
 client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
-    recievedMessage.delete(600000)
+    recievedMessage.delete(10000)
   } else {
   recievedMessage.channel.send("Message recieved, " + recievedMessage.author.toString()+":" + recievedMessage.content)
   }
@@ -29,6 +29,8 @@ client.on('message', (recievedMessage) => {
 
   if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
+  }else {
+  recievedMessage.channel.send("Available Commands are !help and !multiply")
   }
 })
 
