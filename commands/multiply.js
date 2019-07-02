@@ -2,7 +2,7 @@ module.exports = {
 	name: 'multiply',
 	description: 'Multiplies any number of numbers.',
 	execute(recievedMessage, arguments) {
-		if (arguments.length<2) {
+		if (client, arguments.length<2) {
     		recievedMessage.channel.send("Not enough arguments. Try `!multiply 2 10`")
     		return
   		}
