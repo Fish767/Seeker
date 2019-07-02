@@ -20,13 +20,12 @@ client.on('ready', () => {
 
 client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
-    recievedMessage.delete(10000)
+    return
   } else {
   recievedMessage.channel.send("Message recieved, " + recievedMessage.author.toString()+":" + recievedMessage.content)
   }
   let customEmoji = recievedMessage.guild.emojis.get("595403644665462803")
   recievedMessage.react(customEmoji)
-  recievedMessage.delete(86400000)
 
   if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
