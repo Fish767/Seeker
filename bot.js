@@ -64,9 +64,9 @@ client.on('message', (recievedMessage) => {
   } else if (recievedMessage.content.startsWith("G")){
 	recievedMessage.channel.send("They offered you the city, and you refused it. And what did you do instead? What I’ve come to expect from you; you saved them. You gave them the one thing that was stolen from them. A chance. A chance to learn. To find love. To live. And in the end what was your reward? You never said. But I think I know… a family.")	  
   } else if (recievedMessage.content.startsWith("h")){
-	recievedMessage.channel.send("Stand in the ashes of a trillion dead souls and ask the ghosts if honor matters. Their silence is your answer.")	  
+	recievedMessage.channel.send("HI, "+recievedMessage.author+". I am the bot that controls all of the commands and I say random things a lot. The available commands are: !multiply [any number of numbers seperated by spaces]. More are comming later! Enjoy.")	  
   } else if (recievedMessage.content.startsWith("H")){
-	recievedMessage.channel.send("Not even death can save you from me!")	  
+	recievedMessage.channel.send("HI, "+recievedMessage.author+". I am the bot that controls all of the commands and I say random things a lot. The available commands are: !multiply [any number of numbers seperated by spaces]. More are comming later! Enjoy.")	  
   } else if (recievedMessage.content.startsWith("i")){
 	recievedMessage.channel.send("Steel wins battles. Gold wins wars.")	  
   } else if (recievedMessage.content.startsWith("I")){
