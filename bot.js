@@ -46,7 +46,7 @@ client.on('message', (recievedMessage) => {
   } else if (recievedMessage.content.startsWith("c")){
 	recievedMessage.channel.send("Thank You " + recievedMessage.author+"! But our princess is in another castle!")	  
   } else if (recievedMessage.content.startsWith("C")){
-	recievedMessage.channel.send("It’s a-me, "+recievedMessage.author)	  
+	recievedMessage.channel.send("It’s a-you, "+recievedMessage.author)	  
   } else if (recievedMessage.content.startsWith("d")){
 	recievedMessage.channel.send("There are two ways of arguing with a woman, and neither one works.")	  
   } else if (recievedMessage.content.startsWith("D")){
@@ -56,7 +56,7 @@ client.on('message', (recievedMessage) => {
   } else if (recievedMessage.content.startsWith("E")){
 	recievedMessage.channel.send("This is your fault. I’m going to kill you. And all the cake is gone. You don’t even care, do you?")	  
   } else if (recievedMessage.content.startsWith("f")){
-	recievedMessage.channel.send("Make life rue the day it thought it could give Cave Johnson lemons! Do you know who I am? I’m the man who’s gonna burn your house down – with the lemons!")	  
+	recievedMessage.channel.send("Make life rue the day it thought it could give Seeker lemons! Do you know who I am? I’m the man who’s gonna burn your house down – with the lemons!")	  
   } else if (recievedMessage.content.startsWith("F")){
 	recievedMessage.channel.send("The right man in the wrong place can make all the difference in the world.")	  
   } else if (recievedMessage.content.startsWith("g")){
@@ -112,7 +112,7 @@ client.on('message', (recievedMessage) => {
   } else if (recievedMessage.content.startsWith("S")){
 	recievedMessage.channel.send("The courage to walk into the Darkness, but strength to return to the Light.")	  
   } else if (recievedMessage.content.startsWith("t")){
-	recievedMessage.channel.send("If history only remembers one in a thousands of us, then the future will be filled with stories of who we were and what we did.")	  
+	recievedMessage.channel.send("If history only remembers one in a thousand of us, then the future will be filled with stories of who we were and what we did.")	  
   } else if (recievedMessage.content.startsWith("T")){
 	recievedMessage.channel.send("We're made up of thousands of parts with thousands of functions all working in tandem to keep us alive. Yet if only one part of our imperfect machine fails, life fails. It makes one realize how fragile, how flawed we are.")	  
   } else if (recievedMessage.content.startsWith("u")){
