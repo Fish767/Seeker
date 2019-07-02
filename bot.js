@@ -34,7 +34,7 @@ client.on('ready', () => {
 
 client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
-    recievedMessage.delete(300000)
+    recievedMessage.delete(60000)
   } else if (recievedMessage.content.startsWith("a")){
 	recievedMessage.channel.send("All that we are is the result of what we have thought.")	  
   } else if (recievedMessage.content.startsWith("A")){
@@ -132,7 +132,7 @@ client.on('message', (recievedMessage) => {
   } else if (recievedMessage.content.startsWith("X")){
 	recievedMessage.channel.send("No matter how dark the night, morning always comes, and our journey begins anew.")	  
   } else if (recievedMessage.content.startsWith("y")){
-	recievedMessage.channel.send("A sword wields no strength unless the hands that holds it has courage.")	  
+	recievedMessage.channel.send("A sword wields no strength unless the hand that holds it has courage.")	  
   } else if (recievedMessage.content.startsWith("Y")){
 	recievedMessage.channel.send("Science isn’t about why! It’s about why not!")	  
   } else if (recievedMessage.content.startsWith("z")){
