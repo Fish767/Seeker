@@ -38,7 +38,7 @@ function processCommand(recievedMessage) {
   let primaryCommand = splitCommand[0]
   let arguments = splitCommand.slice(1)
 
-  if (primaryCommand == "help") {
+    if (primaryCommand == "help") {
     helpCommand(arguments, recievedMessage)
   } else if (primaryCommand == "multiply") {
     multiplyCommand(arguments, recievedMessage)
@@ -70,17 +70,18 @@ function helpCommand(arguments, recievedMessage) {
 }
 
 function clearCommand(arguments, recievedMessage) {
-  if (recievedMessage.author.hasPremissions(ADMINISTRATOR))
+  if (recievedMessage.member.hasPermissions("ADMINISTRATOR"))
   {
     if(arguments.length == 0) {
-      recievedMessage.channel.send("How many, " + recievedMessage.author.tostring() + "?")
+      recievedMessage.channel.send("How many, " + recievedMessage.author.toString() + "?")
     } else {
-      recievedMessage.channel.deleteBulk(arguments)
+      recievedMessage.channel.bulkDelete(parseInt(arguments))
       recievedMessage.channel.send("Deleted "+arguments+" messages.")
     }
   }else {
     recievedMessage.channel.send("Oof. You need more permissions " + recievedMessage.author.toString()+".")
   }
 }
+
 
 client.login(process.env.BOT_TOKEN)
