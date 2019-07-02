@@ -68,4 +68,4 @@ function helpCommand(arguments, recievedMessage) {
   }
 }
 
-client.login(process.env.NTk1MzY4MjIyODA3NTU2MDk2.XRqylA.cIiKiwXOGCYw-Lozn11G4PO6fO0)
+client.login(process.env.BOT_TOKEN)
