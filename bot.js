@@ -26,7 +26,11 @@ client.on('message', (recievedMessage) => {
   }
   let customEmoji = recievedMessage.guild.emojis.get("595403644665462803")
   recievedMessage.react(customEmoji)
-  recievedMessage.delete(86400000)
+  if (recievedMessage.author==Fish767#3113) {
+    return
+  } else{
+  recievedMessage.delete(1000)
+  })
 
   if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
