@@ -40,7 +40,7 @@ client.on('message', (recievedMessage) => {
   } else if (recievedMessage.content.startsWith("A")){
 	recievedMessage.channel.send("If you judge people, you have no time to love them.")	  
   } else if (recievedMessage.content.startsWith("b")){
-	recievedMessage.channel.send("What do the numbers mean, Mason?")	  
+	recievedMessage.channel.send("What do the numbers mean, "+recievedMessage.author+"?")	  
   } else if (recievedMessage.content.startsWith("B")){
 	recievedMessage.channel.send("You Have Died.")	  
   } else if (recievedMessage.content.startsWith("c")){
