@@ -1,5 +1,19 @@
+const fs = require('fs');
+
 const Discord = require('discord.js')
 const client = new Discord.Client()
+
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+
+	// set a new item in the Collection
+	// with the key as the command name and the value as the exported module
+	client.commands.set(command.name, command);
+}
+
 
 client.on('ready', () => {
     console.log("Connected as "+client.user.tag)
@@ -22,11 +36,11 @@ client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
     recievedMessage.delete(10000)
   } else {
-  recievedMessage.channel.send("Message recieved, " + recievedMessage.author.toString()+":" + recievedMessage.content+". Available commands are !help and !multiply.")
+  recievedMessage.channel.send("Message recieved, " + recievedMessage.author.toString()+":" + recievedMessage.content)
   }
   let customEmoji = recievedMessage.guild.emojis.get("595403644665462803")
   recievedMessage.react(customEmoji)
-
+  recievedMessage.delete(86400000)
   if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
   }
@@ -38,49 +52,14 @@ function processCommand(recievedMessage) {
   let primaryCommand = splitCommand[0]
   let arguments = splitCommand.slice(1)
 
-    if (primaryCommand == "help") {
-    helpCommand(arguments, recievedMessage)
-  } else if (primaryCommand == "multiply") {
-    multiplyCommand(arguments, recievedMessage)
-  } else if (primaryCommand == "clear") {
-    clearCommand(arguments, recievedMessage)
-  } else {
-    recievedMessage.channel.send("Unknown command.")
-  }
-}
+  if (!client.commands.has(primaryCommand)) return;
 
-function multiplyCommand(arguments, recievedMessage) {
-  if (arguments.length<2) {
-    recievedMessage.channel.send("Not enough arguments. Try `!multiply 2 10`")
-    return
-  }
-  let product = 1
-  arguments.forEach((value) => {
-    product = product * parseFloat(value)
-  })
-  recievedMessage.channel.send("The product of "+arguments+ " is "+product.toString())
+try {
+	client.commands.get(primaryCommand).execute(arguments, recievedMessage);
+} catch (error) {
+	console.error(error);
+	message.reply('there was an error trying to execute that command!');
 }
-
-function helpCommand(arguments, recievedMessage) {
-  if (arguments.length == 0) {
-    recievedMessage.channel.send("I'm not sure what you need help with. Try `!help [topic]`")
-  } else {
-    recievedMessage.channel.send("It looks like you need help with "+ arguments)
-  }
-}
-
-function clearCommand(arguments, recievedMessage) {
-  if (recievedMessage.member.hasPermissions("ADMINISTRATOR"))
-  {
-    if(arguments.length == 0) {
-      recievedMessage.channel.send("How many, " + recievedMessage.author.toString() + "?")
-    } else {
-      recievedMessage.channel.bulkDelete(parseInt(arguments))
-      recievedMessage.channel.send("Deleted "+arguments+" messages.")
-    }
-  }else {
-    recievedMessage.channel.send("Oof. You need more permissions " + recievedMessage.author.toString()+".")
-  }
 }
 
 
