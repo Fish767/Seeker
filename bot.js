@@ -35,12 +35,14 @@ client.on('ready', () => {
 client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
     recievedMessage.delete(60000)
+  } else if (recievedMessage.content.startsWith("!")){
+    processCommand(recievedMessage)
+  } else if (!recievedMessage.content.startsWith("!")) {
+    recievedMessage.channel.send("!replies")
   }
   if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
-  } else {
-    processReply()
-  }
+  } 
 })
 
 function processCommand(recievedMessage) {
@@ -48,7 +50,7 @@ function processCommand(recievedMessage) {
   let splitCommand = fullCommand.split(" ")
   let primaryCommand = splitCommand[0]
   let arguments = splitCommand.slice(1)
-
+  recievedMessage.channel.bulkDelete(1)
   if (!client.commands.has(primaryCommand)) return;
 
 try {
@@ -59,14 +61,5 @@ try {
 }
 }
 
-function processReply() {
-  if(!client.commands.has("replies")) return
-try {
-     client.commands.get("replies").execute(client, recievedMessage);
-} catch (error) {
-	console.error(error);
-	recievedMessage.channel.send('there was an error trying to execute that command!');
-}
-}
 
 client.login(process.env.BOT_TOKEN)
