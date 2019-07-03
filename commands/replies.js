@@ -103,4 +103,6 @@ module.exports = {
 	recievedMessage.channel.send("There was a HOLE here. It's gone now.")	  
   } else if (textNumber == 16){
 	recievedMessage.channel.send("It's more important to master the cards you're holding than to complain about the ones your opponents were dealt.")	  
-  }
+  };
+ },
+};
