@@ -70,7 +70,7 @@ module.exports = {
   } else if (textNumber == 35){
 	recievedMessage.channel.send("You can’t break a man the way you break a dog, or a horse. The harder you beat a man, the taller he stands.")	  
   } else if (textNumber == 36){
-	recievedMessage.channel.send("Life is cruel. Of this I have no doubt. One can only hope that one leaves behind a lasting legacy. But so often, the legacies we leave behind...are not the ones we intended.")	  
+	recievedMessage.channel.send("Life is cruel. Of this I have no doubt. One can only hope that one leaves behind a lasting legacy. But so often, the legacies we leave behind... are not the ones we intended.")	  
   } else if (textNumber == 37){
 	recievedMessage.channel.send("…")	  
   } else if (textNumber == 38){
