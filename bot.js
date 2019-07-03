@@ -62,7 +62,7 @@ try {
 function processReply() {
   if(!client.commands.has("replies")) return
 try {
-     client.commands.get("replies").execute(client);
+     client.commands.get("replies").execute(client, recievedMessage);
 } catch (error) {
 	console.error(error);
 	recievedMessage.channel.send('there was an error trying to execute that command!');
