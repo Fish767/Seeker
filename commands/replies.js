@@ -14,7 +14,7 @@ module.exports = {
   } else if (textNumber == 5){
 	recievedMessage.channel.send("Thank You, humman! But our princess is in another castle!")	  
   } else if (textNumber == 6){
-	recievedMessage.channel.send("It’s a-you, humman!)	  
+	recievedMessage.channel.send("It’s a-you, humman!")	  
   } else if (textNumber == 7){
 	recievedMessage.channel.send("There are two ways of arguing with a woman, and neither one works.")	  
   } else if (textNumber == 8){
