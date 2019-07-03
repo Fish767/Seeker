@@ -8,13 +8,13 @@ module.exports = {
   } else if (textNumber == 2){
 	recievedMessage.channel.send("If you judge people, you have no time to love them.")	  
   } else if (textNumber == 3){
-	recievedMessage.channel.send("What do the numbers mean, "+recievedMessage.author+"?")	  
+	recievedMessage.channel.send("What do the numbers mean, humman?")	  
   } else if (textNumber == 4){
 	recievedMessage.channel.send("You Have Died.")	  
   } else if (textNumber == 5){
-	recievedMessage.channel.send("Thank You " + recievedMessage.author+"! But our princess is in another castle!")	  
+	recievedMessage.channel.send("Thank You, humman! But our princess is in another castle!")	  
   } else if (textNumber == 6){
-	recievedMessage.channel.send("It’s a-you, "+recievedMessage.author)	  
+	recievedMessage.channel.send("It’s a-you, humman!)	  
   } else if (textNumber == 7){
 	recievedMessage.channel.send("There are two ways of arguing with a woman, and neither one works.")	  
   } else if (textNumber == 8){
