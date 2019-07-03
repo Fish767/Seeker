@@ -1,8 +1,8 @@
 module.exports = {
-  name: 'text',
+  name: 'replies',
   description: 'Is the random text that the bot can reply with.',
-  execute(client, recievedMessage) {
-  let textNumber = Math.floor((Math.random() * 50) +1)
+  execute(client, recievedMessage, arguments) {
+  let textNumber = Math.floor((Math.random(0,1) * 50) +1)
   if (textNumber == 1){
 	recievedMessage.channel.send("All that we are is the result of what we have thought.")	  
   } else if (textNumber == 2){
@@ -104,5 +104,5 @@ module.exports = {
   } else if (textNumber == 16){
 	recievedMessage.channel.send("It's more important to master the cards you're holding than to complain about the ones your opponents were dealt.")	  
   };
- },
+},
 };
