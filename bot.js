@@ -43,6 +43,7 @@ client.on('message', (recievedMessage) => {
   if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
   } 
+	recievedMessage.delete(3600000)
 })
 
 function processCommand(recievedMessage) {
