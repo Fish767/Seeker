@@ -47,7 +47,6 @@ client.on('message', (recievedMessage) => {
     processCommand(recievedMessage)
   } 
 })
-
 function processCommand(recievedMessage) {
   let fullCommand = recievedMessage.content.substr(1)
   let splitCommand = fullCommand.split(" ")
