@@ -34,15 +34,15 @@ client.on('ready', () => {
 
 client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
-    recievedMessage.delete(13000)
-  }else if (recievedMessage.content.startsWith("!")){
+    recievedMessage.delete(60000)
+  } else if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
   } else if (!recievedMessage.content.startsWith("!")) {
     recievedMessage.channel.send("!replies")
   }
   if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
-  }
+  } 
 })
 
 function processCommand(recievedMessage) {
