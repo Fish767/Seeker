@@ -25,16 +25,19 @@ client.on('ready', () => {
       guild.channels.forEach((channel) => {
         console.log(` - ${channel.name} ${channel.type} ${channel.id}`)
       })
-      // General channel id: 585360537869877250
+      // General channel id: 655644146643501066
     })
 
-    let generalChannel = client.channels.get("585360537869877250")
+    let generalChannel = client.channels.get("655644146643501066")
     generalChannel.send("Hello, Discord users!")
 })
 
 client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
-    recievedMessage.delete(13000)
+     if (recievedMessage.content.startsWith("!")){
+     recievedMessage.delete(1)
+    }else {
+    }
   } else if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
   } else if (!recievedMessage.content.startsWith("!")) {
@@ -50,7 +53,6 @@ function processCommand(recievedMessage) {
   let splitCommand = fullCommand.split(" ")
   let primaryCommand = splitCommand[0]
   let arguments = splitCommand.slice(1)
-  recievedMessage.channel.bulkDelete(1)
   if (!client.commands.has(primaryCommand)) return;
 
 try {
