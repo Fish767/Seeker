@@ -34,7 +34,7 @@ client.on('ready', () => {
 
 client.on('message', (recievedMessage) => {
   if (recievedMessage.author==client.user) {
-    recievedMessage.delete(60000)
+    recievedMessage.delete(13000)
   } else if (recievedMessage.content.startsWith("!")){
     processCommand(recievedMessage)
   } else if (!recievedMessage.content.startsWith("!")) {
