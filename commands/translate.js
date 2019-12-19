@@ -4,7 +4,6 @@ module.exports = {
     execute(client, receivedMessage, splitMessage, messageToSend, finalMessage, arguments) {
         thing=splitMessage.length;
         let reportChannel=client.channels.get('656484062478860298')
-        finalMessage.push(receivedMessage.author+'said: ')
         for (var i=0; i<thing; i++){
             if (splitMessage[i]==='yes') {
                 messageToSend.push('sí')
@@ -80,6 +79,7 @@ module.exports = {
                 messageToSend.push('gusta/gustan')
             }else{
                 reportChannel.send(splitMessage[i])
+                messageToSend.push(splitMessage[i])
             }
             if (i===thing-1) {
                 
