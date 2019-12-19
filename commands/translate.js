@@ -4,6 +4,8 @@ module.exports = {
     execute(client, receivedMessage, splitMessage, messageToSend, finalMessage, arguments) {
         thing=splitMessage.length;
         let reportChannel=client.channels.get('656484062478860298')
+        let buggywords='';
+        let buglist='';
         for (var i=0; i<thing; i++){
             if (splitMessage[i]==='yes') {
                 messageToSend.push('sí')
@@ -78,7 +80,7 @@ module.exports = {
             }else if (splitMessage[i]==='like') {
                 messageToSend.push('gusta/gustan')
             }else{
-                reportChannel.send(splitMessage[i])
+                buggywords.push(splitMessage[i])
                 messageToSend.push(splitMessage[i])
             }
             if (i===thing-1) {
@@ -86,12 +88,21 @@ module.exports = {
             }
         }
         thing2=messageToSend.length;
+        thing3=buggywords.length;
         for(var j=0; j<thing2; j++) {
             finalMessage+=messageToSend[j];
             if (j!==thing2-1) {
                 finalMessage+=' ';
             }else {
                 receivedMessage.channel.send(finalMessage)
+            }
+        }
+        for(var k=0; k<thing3; k++) {
+            buglist+=buggywords[k];
+            if (k!==thing3-1) {
+                buglist+=', ';
+            }else {
+                receivedMessage.channel.send(buglist);
             }
         }
     }
