@@ -4,7 +4,7 @@ module.exports = {
     execute(client, receivedMessage, splitMessage, messageToSend, finalMessage, arguments) {
         thing=splitMessage.length;
         let reportChannel=client.channels.get('656484062478860298')
-        let buggywords='';
+        let buggywords=[];
         let buglist='';
         for (var i=0; i<thing; i++){
             if (splitMessage[i]==='yes') {
