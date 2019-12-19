@@ -69,4 +69,4 @@ try{
 }
 
 
-client.login("NTk1MzY4MjIyODA3NTU2MDk2.XRq_LA.EsVUgC5XofUZaAnkzr8WBxk0Scs")
+client.login(BOT TOKEN)
