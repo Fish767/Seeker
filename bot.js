@@ -34,7 +34,8 @@ client.on('ready', () => {
 
 client.on('message', (receivedMessage) => {
   if (receivedMessage.author==client.user) {
-  if (receivedMessage.content.startsWith("!")){
+    return;
+  } else if (receivedMessage.content.startsWith("!")){
     processCommand(receivedMessage)
   }else if (!receivedMessage.content.startsWith("!")){
     translateMessage(receivedMessage)
