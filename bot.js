@@ -37,8 +37,10 @@ client.on('message', (receivedMessage) => {
     return;
   } else if (receivedMessage.content.startsWith("!")){
     processCommand(receivedMessage)
+	receivedMessage.delete(1);
   }else if (!receivedMessage.content.startsWith("!")){
     translateMessage(receivedMessage)
+	  receivedMessage.delete(1);
   }
 })
 
