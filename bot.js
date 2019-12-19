@@ -69,4 +69,4 @@ try{
 }
 
 
-client.login(BOT TOKEN)
+client.login(BOT_TOKEN)
