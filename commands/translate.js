@@ -102,7 +102,7 @@ module.exports = {
             if (k!==thing3-1) {
                 buglist+=', ';
             }else {
-                receivedMessage.channel.send(buglist);
+                reportChannel.send(buglist);
             }
         }
     }
