@@ -79,7 +79,6 @@ module.exports = {
                 messageToSend.push('gusta/gustan')
             }else{
                 reportChannel.send(splitMessage[i])
-                messageToSend.push('UNKOWN WORD/PALABRA DESCONOCIDA')
             }
             if (i===thing-1) {
                 
