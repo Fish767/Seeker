@@ -3,6 +3,12 @@ const fs = require('fs');
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
+const ytdl = require("ytdl-core");
+
+const prefix = 's?';
+
+var servers = [];
+
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -33,41 +39,29 @@ client.on('ready', () => {
 })
 
 client.on('message', (receivedMessage) => {
-  if (receivedMessage.author==client.user) {
+  if (receivedMessage.author===client.user) {
     return;
-  } else if (receivedMessage.content.startsWith("!")){
+  } else if (receivedMessage.content.startsWith(prefix)){
     processCommand(receivedMessage)
-  }else if (!receivedMessage.content.startsWith("!")){
-    translateMessage(receivedMessage)
   }
 })
 
+
 function processCommand(receivedMessage) {
-  let fullCommand = receivedMessage.content.substr(1)
+  let fullCommand = receivedMessage.content.substr(prefix.length)
   let splitCommand = fullCommand.split(" ")
   let primaryCommand = splitCommand[0]
   let arguments = splitCommand.slice(1)
   if (!client.commands.has(primaryCommand)) return;
 
 try {
-	client.commands.get(primaryCommand).execute(client, receivedMessage, arguments);
+	client.commands.get(primaryCommand).execute(client, receivedMessage, ytdl, servers, arguments);
 } catch (error) {
 	console.error(error);
 	receivedMessage.channel.send('there was an error trying to execute that command!');
 }
 }
 
-function translateMessage(receivedMessage) {
-  let splitMessage = receivedMessage.content.split(" ")
-  let messageToSend=[];
-  let finalMessage='';
-try{
-  client.commands.get('translate').execute(client, receivedMessage, splitMessage, messageToSend, finalMessage, arguments);
-} catch (error) {
-  console.error(error);
-  receivedMessage.channel.send('There was an error trying to translate that sentence!');
-}
-}
 
 
 client.login(process.env.BOT_TOKEN)
