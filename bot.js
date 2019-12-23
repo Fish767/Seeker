@@ -36,12 +36,14 @@ client.on('ready', () => {
 
     let generalChannel = client.channels.get("655644146643501066")
     generalChannel.send("Hello, Discord users!")
+    let musicChannel=client.channels.get("658233667960700981")
+    musicChannel.join()
+    let commandChannel = client.channels.get("658239424919764993")
+    commandChannel.send('s?play https://youtu.be/pa8nzjnv2x0')
 })
 
 client.on('message', (receivedMessage) => {
-  if (receivedMessage.author===client.user) {
-    return;
-  } else if (receivedMessage.content.startsWith(prefix)){
+  if (receivedMessage.content.startsWith(prefix)){
     processCommand(receivedMessage)
   }
 })
@@ -61,7 +63,6 @@ try {
 	receivedMessage.channel.send('there was an error trying to execute that command!');
 }
 }
-
 
 
 client.login(process.env.BOT_TOKEN)
