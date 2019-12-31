@@ -75,6 +75,7 @@ function processCommand(receivedMessage) {
         }
     }
     receivedMessage.channel.send('s?play '+playsongs[0])
+    receivedMessage.delete(0)
     playsongs.splice(0,1)
     songsInUse[songnum[0]]===0
     songnum.splice(0,1)
