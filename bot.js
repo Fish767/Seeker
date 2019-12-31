@@ -32,7 +32,7 @@ for (const file of commandFiles) {
 client.on('ready', () => {
     console.log("Connected as "+client.user.tag)
 
-    client.user.setActivity("You", {type: "WATCHING"})
+    client.user.setActivity("Music", {type: "PLAYING"})
 
     client.guilds.forEach((guild) => {
       console.log(guild.name)
@@ -80,6 +80,7 @@ function processCommand(receivedMessage) {
     songsInUse[songnum[0]]===0
     songnum.splice(0,1)
   }
+
   if (!client.commands.has(primaryCommand)) return;
 
 try {
@@ -89,5 +90,8 @@ try {
 	receivedMessage.channel.send('there was an error trying to execute that command!');
 }
 }
+
+
+
 
 client.login(process.env.BOT_TOKEN)
