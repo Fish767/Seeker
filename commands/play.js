@@ -16,7 +16,7 @@ module.exports = {
                     play(connection, receivedMessage);
                 }else {
                     connection.disconnect();
-                    receivedMessage.channel.send('s?play '+Math.floor(Math.random()*(songURLs.length-2)))
+                    receivedMessage.channel.send('s?play '+songURLs[Math.floor(Math.random()*(songURLs.length-2)))]
                 }
             });
 
