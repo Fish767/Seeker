@@ -10,13 +10,6 @@ const prefix = 's?';
 var servers = [];
 
 
-let playsongs=[]
-let songnum=[]
-let songsInUse=[]
-for (var i=0; i<songURLs.length; i++) {
-  songsInUse.push(0)
-}
-
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
