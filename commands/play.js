@@ -46,12 +46,8 @@ module.exports = {
             play(connection, receivedMessage);
         })
 
-        if(receivedMessage.author===client.user&&!receivedMessage.guild.voiceConnection) client.channels.get("658233667960700981").join().then(function(connection){
+        if(receivedMessage.author===client.user) client.channels.get("658233667960700981").join().then(function(connection){
             play(connection, receivedMessage);
         })
-
-        if (receivedMessage.author===client.user&&receivedMessage.guild.voiceConnection) {
-            play(connection, receivedMessage);
-        }
-    },
+    }
 };
