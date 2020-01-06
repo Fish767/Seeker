@@ -15,8 +15,9 @@ module.exports = {
                 if(server.queue[0]){
                     play(connection, receivedMessage);
                 }else {
-                    connection.disconnect();
-                    receivedMessage.channel.send('s?play '+songURLs[Math.floor(Math.random()*(songURLs.length-2))])
+                    //connection.disconnect();
+                    let commandChannel = client.channels.get("658239424919764993")
+                    commandChannel.send('s?play '+songURLs[Math.floor(Math.random()*(songURLs.length-2))])
                 }
             });
 
