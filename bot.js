@@ -48,18 +48,10 @@ client.on('message', (receivedMessage) => {
   }else if (receivedMessage.author===client.user&&receivedMessage.content.startsWith('Deleted ')) {
     receivedMessage.delete(10000)
     return;
-  }else if (receivedMessage.content.startsWith('<@')&&receivedMessage.author!==client.user) {
-    let wINRN = receivedMessage.slice(2, -1);
-  
-    if (wINRN.startsWith('!')) {
-      wINRN = wINRN.slice(1);
-    }
-    if (wINRN===client.user) {
-      receivedMessage.channel.send(receivedMessage.author+', I am a bot and can\'t understand what you are saying. If it is about a bug put it in #bugs. If it is not and you would like my owner to hear about it please dm or ping @Fish767#3113. Thanks!')
-      dmChannel.send(receivedMessage.content)
-    }else {
-      return
-    }
+  }else if (receivedMessage.author!==client.user&&receivedMessage.mentions.users.first()===client.user) {
+    receivedMessage.channel.send(receivedMessage.author+', I am a bot and can\'t understand what you are saying. If it is about a bug put it in #bugs. If it is not and you would like my owner to hear about it please dm or ping <@'+receivedMessage.guild.ownerID+'>. Thanks!')
+    let dmChannel=client.channels.get('663824648026456112')
+    dmChannel.send(receivedMessage.content)
   }
 })
 
