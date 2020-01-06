@@ -35,8 +35,6 @@ client.on('ready', () => {
       // General channel id: 655644146643501066
     })
 
-    let generalChannel = client.channels.get("655644146643501066")
-    generalChannel.send("Hello!")
     let musicChannel=client.channels.get("658233667960700981")
     musicChannel.join()
     let commandChannel = client.channels.get("658239424919764993")
