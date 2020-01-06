@@ -6,8 +6,8 @@ module.exports = {
                 if(arguments.length == 0) {
                       receivedMessage.channel.send("How many, " + receivedMessage.author.toString() + "?")
                 } else {
-                      receivedMessage.channel.bulkDelete(parseInt(arguments))
-                      receivedMessage.channel.send("Deleted "+arguments+" messages.")
+                      receivedMessage.channel.bulkDelete(parseInt(arguments[0]+1))
+                      receivedMessage.channel.send("Deleted "+arguments[0]+" messages.")
                 }
               
         }else {
