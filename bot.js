@@ -9,7 +9,6 @@ const prefix = 's?';
 
 var servers = [];
 
-let dmChannel=client.channels.get('663824648026456112')
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
