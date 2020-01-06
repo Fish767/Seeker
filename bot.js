@@ -9,6 +9,7 @@ const prefix = 's?';
 
 var servers = [];
 
+let dmChannel=client.channels.get('663824648026456112')
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -35,7 +36,6 @@ client.on('ready', () => {
       // General channel id: 655644146643501066
     })
 
-    let dmChannel=client.channels.get('663824648026456112')
     let musicChannel=client.channels.get("658233667960700981")
     musicChannel.join()
     let commandChannel = client.channels.get("658239424919764993")
