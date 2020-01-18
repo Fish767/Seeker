@@ -17,12 +17,12 @@ module.exports = {
                 }else {
                     //connection.disconnect();
                     let commandChannel = client.channels.get("667941568346587156")
-                    
+                    let displayChannel = client.channels.get("667945409850638338")
                    //Shoutout to Ran fo fixing the line of code below and fixing the bot a little
                     let r=songURLs[Math.floor(Math.random()*(songURLs.length))]
-                    commandChannel.send('s?play '+r)
-                    displayChannel.bulkDelete(2)
+                    displayChannel.bulkDelete(1)
                     displayChannel.send('Playing '+r)
+                    commandChannel.send('s?play '+r)
                     
                 }
             });
