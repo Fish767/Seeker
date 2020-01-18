@@ -37,7 +37,7 @@ client.on('ready', () => {
 
     let musicChannel=client.channels.get("658233667960700981")
     musicChannel.join()
-    let commandChannel = client.channels.get("658239424919764993")
+    let commandChannel = client.channels.get("667941568346587156")
     commandChannel.send('s?play https://youtu.be/pa8nzjnv2x0')
 })
 
