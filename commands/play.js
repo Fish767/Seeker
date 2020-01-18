@@ -19,7 +19,10 @@ module.exports = {
                     let commandChannel = client.channels.get("667941568346587156")
                     
                    //Shoutout to Ran fo fixing the line of code below and fixing the bot a little
-                    commandChannel.send('s?play '+songURLs[Math.floor(Math.random()*(songURLs.length))])
+                    let r=songURLs[Math.floor(Math.random()*(songURLs.length))]
+                    commandChannel.send('s?play '+r)
+                    displayChannel.bulkDelete(2)
+                    displayChannel.send('Playing '+r)
                     
                 }
             });
