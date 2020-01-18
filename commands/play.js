@@ -16,9 +16,9 @@ module.exports = {
                     play(connection);
                 }else {
                     //connection.disconnect();
-                    let commandChannel = client.channels.get("658239424919764993")
+                    let commandChannel = client.channels.get("667941568346587156")
                     
-                   //Shoutout to Ran fo fixing the line of code below and fixing the bot a litlle
+                   //Shoutout to Ran fo fixing the line of code below and fixing the bot a little
                     commandChannel.send('s?play '+songURLs[Math.floor(Math.random()*(songURLs.length))])
                     
                 }
