@@ -17,7 +17,10 @@ module.exports = {
                 }else {
                     //connection.disconnect();
                     let commandChannel = client.channels.get("658239424919764993")
-                    commandChannel.send('s?play '+songURLs[Math.floor(Math.random()*(songURLs.length-2))])
+                    
+                   //Shoutout to Ran fo fixing the line of code below and fixing the bot a litlle
+                    commandChannel.send('s?play '+songURLs[Math.floor(Math.random()*(songURLs.length))])
+                    
                 }
             });
 
