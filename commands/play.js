@@ -16,14 +16,12 @@ module.exports = {
                     play(connection);
                 }else {
                     //connection.disconnect();
-                    let commandChannel = client.channels.get("667941568346587156")
-                    let displayChannel = client.channels.get("667945409850638338")
-                   //Shoutout to Ran fo fixing the line of code below and fixing the bot a little
+                    //Shoutout to Ran for fixing the line of code below and fixing the bot a little
                     let r=songURLs[Math.floor(Math.random()*(songURLs.length))]
-                    displayChannel.bulkDelete(1)
-                    displayChannel.send('Playing '+r)
-                    commandChannel.send('s?play '+r)
-                    
+                    //client.channels.get("658233667960700981").join().then(function(connection){
+                        server.queue.push(r);
+                        play(connection);
+                   //})
                 }
             });
 
