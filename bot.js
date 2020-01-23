@@ -34,9 +34,6 @@ client.on('ready', () => {
       })
       // General channel id: 655644146643501066
     })
-    let displayChannel = client.channels.get("667945409850638338") 
-    displayChannel.bulkDelete(2)
-    displayChannel.send('Playing s?play https://youtu.be/pa8nzjnv2x0')
     let musicChannel=client.channels.get("658233667960700981")
     musicChannel.join()
     let commandChannel = client.channels.get("667941568346587156")
@@ -71,7 +68,6 @@ try {
 	receivedMessage.channel.send('there was an error trying to execute that command!');
 }
 }
-
 
 
 client.login(process.env.BOT_TOKEN)
