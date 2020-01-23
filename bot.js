@@ -21,6 +21,14 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
 
 client.on('ready', () => {
     console.log("Connected as "+client.user.tag)
@@ -36,6 +44,7 @@ client.on('ready', () => {
     })
     let musicChannel=client.channels.get("658233667960700981")
     musicChannel.leave();
+    sleep(5000)
     musicChannel.join()
     let commandChannel = client.channels.get("667941568346587156")
     commandChannel.send('s?play https://youtu.be/pa8nzjnv2x0')
@@ -69,6 +78,5 @@ try {
 	receivedMessage.channel.send('there was an error trying to execute that command!');
 }
 }
-
 
 client.login(process.env.BOT_TOKEN)
