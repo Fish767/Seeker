@@ -43,6 +43,7 @@ client.on('ready', () => {
       // General channel id: 655644146643501066
     })
     let musicChannel=client.channels.get("658233667960700981")
+    sleep(5000)
     musicChannel.leave();
     sleep(5000)
     musicChannel.join()
